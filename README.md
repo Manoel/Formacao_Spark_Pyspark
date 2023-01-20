@@ -1,6 +1,4 @@
----
-marp: true
----
+
 
 # Formacao_Spark_Pyspark
 Curso Spark com PySpark.
@@ -19,8 +17,8 @@ O que você vai aprender.
 
 ## Requirements
 
-> Conhecimento básicos de Python
-> Computador capaz de rodar uma VM com Linux
+* Conhecimento básicos de Python
+* Computador capaz de rodar uma VM com Linux
 
 
 
