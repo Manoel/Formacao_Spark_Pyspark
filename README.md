@@ -1,4 +1,5 @@
 
+[![](https://github.com/Manoel/Formacao_Spark_Pyspark/blob/main/pyspark.png)](https://www.linkedin.com/in/manoel-rodrigues-do-nascimento-2359a732)
 
 # Formacao_Spark_Pyspark
 Curso Spark com PySpark.
