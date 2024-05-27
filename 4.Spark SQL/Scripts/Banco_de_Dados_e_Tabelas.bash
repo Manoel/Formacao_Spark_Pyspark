@@ -1,21 +1,6 @@
 >>> from pyspark.sql import SparkSession
 >>> from pyspark.sql.types import *
->>> spark.sql("show database").show()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/opt/spark/python/pyspark/sql/session.py", line 1034, in sql
-    return DataFrame(self._jsparkSession.sql(sqlQuery), self)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/spark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
-  File "/opt/spark/python/pyspark/sql/utils.py", line 196, in deco
-    raise converted from None
-pyspark.sql.utils.ParseException: 
-Syntax error at or near end of input: missing 'FUNCTIONS'(line 1, pos 13)
-
-== SQL ==
-show database
--------------^^^
-
+>>> 
 >>> spark.sql("show databases").show()
 +---------+
 |namespace|
