@@ -5,11 +5,11 @@
 
 ```pyspark
 
->>> clientes = spark.read.load("/home/manoel/download/Atividades/Clientes.parquet")
->>> vendas = spark.read.load("/home/manoel/download/Atividades/Vendas.parquet")
->>> itensvendas = spark.read.load("/home/manoel/download/Atividades/ItensVendas.parquet")
->>> produtos = spark.read.load("/home/manoel/download/Atividades/Produtos.parquet")
->>> vendedores = spark.read.load("/home/manoel/download/Atividades/Vendedores.parquet")
+ clientes = spark.read.load("/home/manoel/download/Atividades/Clientes.parquet")
+ vendas = spark.read.load("/home/manoel/download/Atividades/Vendas.parquet")
+ itensvendas = spark.read.load("/home/manoel/download/Atividades/ItensVendas.parquet")
+ produtos = spark.read.load("/home/manoel/download/Atividades/Produtos.parquet")
+ vendedores = spark.read.load("/home/manoel/download/Atividades/Vendedores.parquet")
 
 ```
 
@@ -17,7 +17,7 @@
 
 ```pyspark
 
->>> spark.sql("create database vendasvarejo")
+ spark.sql("create database vendasvarejo")
 
 ```
 
@@ -25,7 +25,7 @@
 
 ```pyspark
 
->>> spark.sql("use vendasvarejo").show()
+ spark.sql("use vendasvarejo").show()
 
 ```
 
@@ -33,17 +33,17 @@
 
 ```pyspark
 
->>> clientes.write.saveAsTable("clientes")
->>> vendas.write.saveAsTable("vendas")
->>> itensvendas.write.saveAsTable("itensvendas")
->>> produtos.write.saveAsTable("produtos"
->>> vendedores.write.saveAsTable("vendedores")
+ clientes.write.saveAsTable("clientes")
+ vendas.write.saveAsTable("vendas")
+ itensvendas.write.saveAsTable("itensvendas")
+ produtos.write.saveAsTable("produtos"
+ vendedores.write.saveAsTable("vendedores")
 
 ```
 
 ### Mostrando as tabelas criadas
 ```pyspark
->>> spark.sql("show tables").show()
+ spark.sql("show tables").show()
 +------------+-----------+-----------+
 |   namespace|  tableName|isTemporary|
 +------------+-----------+-----------+
@@ -59,7 +59,7 @@
 ### Visualisando os dados da tabela produtos.
 
 ```pyspark
->>> spark.sql("select * from produtos").show()
+ spark.sql("select * from produtos").show()
 
 +---------+--------------------+---------+
 |ProdutoID|             Produto|    Preco|
@@ -82,7 +82,7 @@
 
 ```pyspark
 
->>> spark.sql("select clientes.Cliente, vendas.Data, produtos.Produto, vendedores.vendedor, itensvendas.valortotal from clientes inner join vendas on (clientes.clienteid = vendas.clienteid) inner join itensvendas on (vendas.vendasid = itensvendas.vendasid) inner join produtos on (itensvendas.produtoid = produtos.produtoid) inner join vendedores on (vendas.vendedorid = vendedores.vendedorid)").show()
+ spark.sql("select clientes.Cliente, vendas.Data, produtos.Produto, vendedores.vendedor, itensvendas.valortotal from clientes inner join vendas on (clientes.clienteid = vendas.clienteid) inner join itensvendas on (vendas.vendasid = itensvendas.vendasid) inner join produtos on (itensvendas.produtoid = produtos.produtoid) inner join vendedores on (vendas.vendedorid = vendedores.vendedorid)").show()
 +-----------------+--------+--------------------+----------------+----------+
 |          Cliente|    Data|             Produto|        vendedor|valortotal|
 +-----------------+--------+--------------------+----------------+----------+
@@ -113,14 +113,14 @@ only showing top 20 rows
 
 ```pyspark
 
->>> spark.sql("select count(*) from itensvendas").show()
+ spark.sql("select count(*) from itensvendas").show()
 +--------+
 |count(1)|
 +--------+
 |     940|
 +--------+
 
->>> spark.sql("select clientes.Cliente, vendas.Data, produtos.Produto, vendedores.vendedor, itensvendas.valortotal from clientes inner join vendas on (clientes.clienteid = vendas.clienteid) inner join itensvendas on (vendas.vendasid = itensvendas.vendasid) inner join produtos on (itensvendas.produtoid = produtos.produtoid) inner join vendedores on (vendas.vendedorid = vendedores.vendedorid)").count()
+ spark.sql("select clientes.Cliente, vendas.Data, produtos.Produto, vendedores.vendedor, itensvendas.valortotal from clientes inner join vendas on (clientes.clienteid = vendas.clienteid) inner join itensvendas on (vendas.vendasid = itensvendas.vendasid) inner join produtos on (itensvendas.produtoid = produtos.produtoid) inner join vendedores on (vendas.vendedorid = vendedores.vendedorid)").count()
 940
 
 
