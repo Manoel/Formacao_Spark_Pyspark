@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
 import os
 import sys
 
@@ -25,5 +26,18 @@ resumo = spark.read \
     .option("driver","org.postgresql.Driver") \
     .load().show()
 
-# teste = resumo.printShema()
-# print(teste)
+print("Tipo: ", type(resumo))
+print("sqlContext: ", type(sqlContext))
+
+sql = "select data, total from vendas"
+
+etl = sqlContext
+
+dfs = etl.read \
+    .format("jdbc") \
+    .option("url","jdbc:postgresql://localhost:5432/vendas") \
+    .option("query",sql) \
+    .option("user",user) \
+    .option("password",pwd) \
+    .option("driver","org.postgresql.Driver") \
+    .load().show()
