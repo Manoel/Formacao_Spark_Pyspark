@@ -2,7 +2,7 @@ import sys
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
-# Lê o arquivo despachantes.csv como datafram, calcula o numero de vendas por ano e exibe no console.
+# Lê o arquivo despachantes.csv como datafram, passa como argumento o caminho do arquivo e calcula o numero de vendas por ano e exibe no console.
 
 if __name__ == "__main__":
     spark = SparkSession \
