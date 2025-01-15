@@ -2,7 +2,7 @@
 
 * Instalando o jupyter e findspark
 
-```pyspark
+```ipynb
 pip install jupyter
 pip install findspark
 
@@ -11,7 +11,7 @@ pip install findspark
 * Usando Spark com Notebooks do Jupyter
 
 * Importando bibliotecas
-```pyspark
+```ipynb
 
 import findspark
 findspark.init()
@@ -30,7 +30,7 @@ import pandas as pd
 
 * Lendo e mostrando o arquivo de churn
 
-```pyspark
+```ipynb
 
 churn = pd.read_csv("/home/manoel/download/Churn.csv", sep=";")
 churn.head(5)
