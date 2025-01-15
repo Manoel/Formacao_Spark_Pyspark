@@ -21,7 +21,7 @@ import pyspark
 * Importando bibliotecas
 
 ```ipynb
-mport findsparkImportando bibliotecas
+import findspark
 findspark.init()
 import pyspark
 import pandas as pd
@@ -90,13 +90,9 @@ CreditScore	Geography	Gender	Age	Tenure	Balance	NumOfProducts	HasCrCard	IsActive
 3	699	France	Female	39	1	0	2	0	0	9382663	0
 4	850	Spain	Female	43	2	12551082	1	1	1	790841	0
 
-
-
 ```
 
 * Usando bibliotecas Koalas (Permite migrar de Pandas para Spark)
-
-* 
 
 ```ipynb
 
